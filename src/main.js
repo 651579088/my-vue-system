@@ -1,23 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from 'src/router'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import * as filters from 'src/filters'
-import FastClick from 'fastclick'
 import App from 'src/App'
 import 'src/util/rem.js'
-import { AlertPlugin, ToastPlugin, WechatPlugin, ConfirmPlugin, LoadingPlugin } from 'vux'
 import 'assets/styles/common.css'
 import common from 'src/util/common'
 import statistical from 'src/util/statistical'
 
-FastClick.attach(document.body)
-
 Vue.use(VueRouter)
-Vue.use(AlertPlugin)
-Vue.use(ToastPlugin)
-Vue.use(WechatPlugin)
-Vue.use(ConfirmPlugin)
-Vue.use(LoadingPlugin)
+Vue.use(ElementUI, { size: 'small' })
 
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])

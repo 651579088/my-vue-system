@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="appName">
+    <navigation-top></navigation-top>
     <div><router-link :to="{name: 'home'}">首页</router-link></div>
     <div><router-link :to="{name: 'list'}">列表</router-link></div>
     <router-view/>
@@ -9,6 +10,7 @@
 
 <script>
 import footerMenu from 'components/common/footerMenu'
+import navigationTop from 'components/navMenu/navigationTop'
 export default{
   data () {
     return {
@@ -16,7 +18,8 @@ export default{
     }
   },
   components: {
-    footerMenu
+    footerMenu,
+    navigationTop
   }
 }
 </script>
